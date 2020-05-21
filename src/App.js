@@ -53,7 +53,7 @@ class App extends React.Component {
         <Suspense fallback={<SpinnerComp />}
         >
           <Header />
-          <HashRouter>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
 
 
             <Route exact path="/" component={Home} />
@@ -76,7 +76,7 @@ class App extends React.Component {
                 (<Signup />)} />
             <Route exact path="/contact-us" component={ContactUs} />
 
-          </HashRouter>
+          </BrowserRouter>
           <Footer />
         </Suspense>
 
