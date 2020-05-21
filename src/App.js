@@ -40,6 +40,8 @@ class App extends React.Component {
         })
       }
 
+      
+
       setCurrentUser(userAuth
       );
       createUserProfileDocument(userAuth);
@@ -53,7 +55,7 @@ class App extends React.Component {
         <Suspense fallback={<SpinnerComp />}
         >
           <Header />
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <HashRouter basename='/' >
 
 
             <Route exact path="/" component={Home} />
@@ -76,7 +78,7 @@ class App extends React.Component {
                 (<Signup />)} />
             <Route exact path="/contact-us" component={ContactUs} />
 
-          </BrowserRouter>
+          </HashRouter>
           <Footer />
         </Suspense>
 
