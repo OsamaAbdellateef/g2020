@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/g2020/static/css/main.9b69dc52.chunk.css",
-    "main.js": "/g2020/static/js/main.9c308788.chunk.js",
-    "main.js.map": "/g2020/static/js/main.9c308788.chunk.js.map",
+    "main.js": "/g2020/static/js/main.0f98892e.chunk.js",
+    "main.js.map": "/g2020/static/js/main.0f98892e.chunk.js.map",
     "runtime-main.js": "/g2020/static/js/runtime-main.2c73ab83.js",
     "runtime-main.js.map": "/g2020/static/js/runtime-main.2c73ab83.js.map",
     "static/css/2.47e06e2e.chunk.css": "/g2020/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.f69849de.chunk.js": "/g2020/static/js/2.f69849de.chunk.js",
-    "static/js/2.f69849de.chunk.js.map": "/g2020/static/js/2.f69849de.chunk.js.map",
+    "static/js/2.e8c12d30.chunk.js": "/g2020/static/js/2.e8c12d30.chunk.js",
+    "static/js/2.e8c12d30.chunk.js.map": "/g2020/static/js/2.e8c12d30.chunk.js.map",
     "static/css/3.746cd798.chunk.css": "/g2020/static/css/3.746cd798.chunk.css",
     "static/js/3.ca31d0c6.chunk.js": "/g2020/static/js/3.ca31d0c6.chunk.js",
     "static/js/3.ca31d0c6.chunk.js.map": "/g2020/static/js/3.ca31d0c6.chunk.js.map",
@@ -19,13 +19,13 @@
     "static/js/6.9271c9e9.chunk.js": "/g2020/static/js/6.9271c9e9.chunk.js",
     "static/js/6.9271c9e9.chunk.js.map": "/g2020/static/js/6.9271c9e9.chunk.js.map",
     "index.html": "/g2020/index.html",
-    "precache-manifest.aedfeee8b2bb6a2c30f0c0d949f570b7.js": "/g2020/precache-manifest.aedfeee8b2bb6a2c30f0c0d949f570b7.js",
+    "precache-manifest.faffbeb9fce60fecb0d251b9487e046d.js": "/g2020/precache-manifest.faffbeb9fce60fecb0d251b9487e046d.js",
     "service-worker.js": "/g2020/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/g2020/static/css/2.47e06e2e.chunk.css.map",
     "static/css/3.746cd798.chunk.css.map": "/g2020/static/css/3.746cd798.chunk.css.map",
     "static/css/5.e10adbe9.chunk.css.map": "/g2020/static/css/5.e10adbe9.chunk.css.map",
     "static/css/main.9b69dc52.chunk.css.map": "/g2020/static/css/main.9b69dc52.chunk.css.map",
-    "static/js/2.f69849de.chunk.js.LICENSE.txt": "/g2020/static/js/2.f69849de.chunk.js.LICENSE.txt",
+    "static/js/2.e8c12d30.chunk.js.LICENSE.txt": "/g2020/static/js/2.e8c12d30.chunk.js.LICENSE.txt",
     "static/media/google.png": "/g2020/static/media/google.ca2f7db2.png",
     "static/media/carousel.style.scss": "/g2020/static/media/header-image.e74e0d49.jpg",
     "static/media/sign-in.style.scss": "/g2020/static/media/login-background.4a94ac5d.jpg",
@@ -40,8 +40,8 @@
   "entrypoints": [
     "static/js/runtime-main.2c73ab83.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.f69849de.chunk.js",
+    "static/js/2.e8c12d30.chunk.js",
     "static/css/main.9b69dc52.chunk.css",
-    "static/js/main.9c308788.chunk.js"
+    "static/js/main.0f98892e.chunk.js"
   ]
 }
