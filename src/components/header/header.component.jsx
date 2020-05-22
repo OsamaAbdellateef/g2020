@@ -29,13 +29,13 @@ const Header = ({ currentUser, id }) => (
                         <Nav.Link href="/posts" className="mr-2">
                             المنشورات
                     </Nav.Link>
-                        <Nav.Link className="mr-2" href="/contact-us">
+                        <Nav.Link as={Link} className="mr-2" href="/contact-us">
                             تواصل معنا
                     </Nav.Link>
                         <Nav.Link className="mr-2" href="/signin">
                             الخدمات
                     </Nav.Link>
-                        <Nav.Link className="mr-2" href="/about">
+                        <Nav.Link as={Link} className="mr-2" href="/about">
                             عن التطبيق
                     </Nav.Link>
                         {currentUser ?
