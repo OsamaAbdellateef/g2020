@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.style.scss';
 import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { Route, Link } from 'react-router-dom';
+import { Route ,HashRouter, Link } from 'react-router-dom';
 import { auth } from './../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,6 +19,7 @@ const Header = ({ currentUser, id }) => (
                 <Navbar.Brand className="logo-txt mr-2" href="/">صنعتنا</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
+                    <HashRouter>
                     <Nav className="mr-auto">
                         <Nav.Link className="mr-2" href="/">الرئيسية</Nav.Link>
                         <NavDropdown className="mr-2" title="الحرفيين" id="basic-nav-dropdown">
@@ -50,6 +51,7 @@ const Header = ({ currentUser, id }) => (
                             </Nav.Link>
                         }
                     </Nav>
+                    </HashRouter>
                 </Navbar.Collapse>
 
             </Container>
