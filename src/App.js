@@ -56,8 +56,8 @@ class App extends React.Component {
         >
           <Header />
           <BrowserRouter >
-            <Route exact path="/" component={Home} />
-            <Route exact path="/posts" component={Posts} />
+            <Route exact path={process.env.PUBLIC_URL + "/"} component={Home} />
+            <Route exact path={process.env.PUBLIC_URL + "/posts"} component={Posts} />
             <Route
               exact
               path="/signin"
@@ -74,7 +74,7 @@ class App extends React.Component {
               render={() => this.props.currentUser ?
                 (<Redirect to='/' />) :
                 (<Signup />)} />
-            <Route exact path="/contact-us" component={ContactUs} />
+            <Route exact path={process.env.PUBLIC_URL + "/contact-us"} component={ContactUs} />
 
           </BrowserRouter>
           <Footer />
