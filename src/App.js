@@ -55,9 +55,9 @@ class App extends React.Component {
         <Suspense fallback={<SpinnerComp />}
         >
           <Header />
-          <BrowserRouter >
-            <Route exact path={process.env.PUBLIC_URL + "/"} component={Home} />
-            <Route exact path={process.env.PUBLIC_URL + "/posts"} component={Posts} />
+          <HashRouter >
+            <Route exact path="/" component={Home} />
+            <Route exact path="/posts" component={Posts} />
             <Route
               exact
               path="/signin"
@@ -65,7 +65,7 @@ class App extends React.Component {
                 (<Redirect to='/' />)
                 : (<SignIn />)} />
 
-            <Route path={process.env.PUBLIC_URL + "/about"} component={About} />
+            <Route path= "/about" component={About} />
             <Suspense fallback={<SpinnerComp />}>
               <Route path={`/crafts/:categoryId`} component={CraftPreview} />
             </Suspense>
@@ -76,7 +76,7 @@ class App extends React.Component {
                 (<Signup />)} />
             <Route exact path={process.env.PUBLIC_URL + "/contact-us"} component={ContactUs} />
 
-          </BrowserRouter>
+          </HashRouter>
           <Footer />
         </Suspense>
 
