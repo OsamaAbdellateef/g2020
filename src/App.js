@@ -54,8 +54,9 @@ class App extends React.Component {
       <div className="App">
         <Suspense fallback={<SpinnerComp />}
         >
-          <Header />
+          
           <HashRouter >
+          <Header />
             <Route exact path="/" component={Home} />
             <Route exact path="/posts" component={Posts} />
             <Route
@@ -74,13 +75,14 @@ class App extends React.Component {
               render={() => this.props.currentUser ?
                 (<Redirect to='/' />) :
                 (<Signup />)} />
-            <Route exact path={process.env.PUBLIC_URL + "/contact-us"} component={ContactUs} />
+            <Route exact path="/contact-us" component={ContactUs} />
 
           </HashRouter>
           <Footer />
         </Suspense>
 
       <RequestsList />
+      <button onClick={() => {console.log(window.location.pathname)}}>show url </button>
       </div>
     );
   }
