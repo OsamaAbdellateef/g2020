@@ -82,7 +82,6 @@ class App extends React.Component {
         </Suspense>
 
       <RequestsList />
-      <button onClick={() => {console.log(window.location.pathname)}}>show url </button>
       </div>
     );
   }

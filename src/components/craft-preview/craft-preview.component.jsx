@@ -126,7 +126,7 @@ class CraftPreview extends React.Component {
                     <Suspense fallback={<Skeleton height={100} width={100} />}>
                          <CraftCard  
                          key={Math.random}
-                        imageCraftURL={worker.imageCraftURL} displayName={worker.address} 
+                        imageCraftURL={worker.imageCraftURL} displayName={worker.displayName} address={worker.address} 
                         phoneNumber={worker.phoneNumber} 
                         crafterID={worker.userID}
                         imagePersonalURL={worker.imagePersonalURL} craft = {worker.craft} />
