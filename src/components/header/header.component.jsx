@@ -45,7 +45,7 @@ const Header = ({ currentUser, id ,match}) => (
                             </Nav.Link>
                             
                         }
-                        <button onClick={() => {console.log(match)}}>push</button>
+                    
                     </Nav>
                      
                     
