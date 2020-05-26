@@ -38,7 +38,9 @@ const INITIAL_STATE = {
     loading:true,
     comments:[],
     comment:'',
-    ownReq:[]
+    ownReq:[],
+    currentURL:'',
+    nUsers:[]
 
 }
 const userReducer = (state = INITIAL_STATE, action) => {

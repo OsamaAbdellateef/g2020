@@ -57,6 +57,7 @@ class App extends React.Component {
           
           <HashRouter >
           <Header />
+            <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/posts" component={Posts} />
             <Route
@@ -77,6 +78,7 @@ class App extends React.Component {
                 (<Signup />)} />
             <Route exact path="/contact-us" component={ContactUs} />
 
+            </Switch>
           </HashRouter>
           <Footer />
         </Suspense>

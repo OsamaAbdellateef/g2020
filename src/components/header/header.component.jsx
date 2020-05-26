@@ -26,7 +26,7 @@ const Header = ({ currentUser, id }) => (
                         <NavDropdown className="mr-2" title="الحرفيين" id="basic-nav-dropdown">
                         <NavDropdown.Item as={Link} to="/crafts/كهربائي" href="/crafts/كهربائي"> كهربائيين</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/crafts/سباك"  href="/crafts/سباك"> سباكين</NavDropdown.Item>
-                            <NavDropdown.Item href="/crafts/محار">محاريين</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/crafts/محار"  href="/crafts/محار"> محاريين</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} className="mr-2" to="/posts"  href="/posts">المنشورات</Nav.Link>
                         <Nav.Link as={Link} className="mr-2" to="/contact-us" href="/contact-us">تواصل معنا</Nav.Link>
