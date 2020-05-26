@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 
-const Header = ({ currentUser, id }) => (
+const Header = ({ currentUser, id ,match}) => (
 
     <React.Fragment>
 
@@ -23,6 +23,7 @@ const Header = ({ currentUser, id }) => (
                         
                         <Nav className="mr-auto">
                         <Nav.Link className="mr-2" as={Link} to="/" href="/">الرئيسية</Nav.Link>
+
                         <NavDropdown className="mr-2" title="الحرفيين" id="basic-nav-dropdown">
                         <NavDropdown.Item as={Link} to="/crafts/كهربائي" href="/crafts/كهربائي"> كهربائيين</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/crafts/سباك"  href="/crafts/سباك"> سباكين</NavDropdown.Item>
@@ -32,7 +33,7 @@ const Header = ({ currentUser, id }) => (
                         <Nav.Link as={Link} className="mr-2" to="/contact-us" href="/contact-us">تواصل معنا</Nav.Link>
                         <Nav.Link as={Link} className="mr-2" to="/services" href="/services">الخدمات</Nav.Link>
                         <Nav.Link as={Link} className="mr-2" to="/about" href="/about">عن التطبيق</Nav.Link>
-                    
+                        
                         {currentUser ?
                             <Nav.Link className="mr-2" onClick={() => auth.signOut()} >
                                 تسجيل الخروج
@@ -44,6 +45,7 @@ const Header = ({ currentUser, id }) => (
                             </Nav.Link>
                             
                         }
+                        <button onClick={() => {console.log(match)}}>push</button>
                     </Nav>
                      
                     

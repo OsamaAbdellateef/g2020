@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import './App.css';
 import Header from './components/header/header.component';
 import Carousel from './components/carousel/carousel.component';
-import {HashRouter, Router, Route, Switch, Link, BrowserRouter, Redirect } from 'react-router-dom';
+import {withRouter, HashRouter, Router, Route, Switch, Link, BrowserRouter, Redirect } from 'react-router-dom';
 import SignIn from './components/sign-in/sign-in.component';
 import SignPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import About from './pages/about/about';
@@ -57,9 +57,13 @@ class App extends React.Component {
           
           <HashRouter >
           <Header />
-            <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/posts" component={Posts} />
+            <Route exact
+              path="/posts"
+              render={() => this.props.currentUser ?
+                (<Posts />):(<Redirect to='/signin' />) 
+                } />
+                
             <Route
               exact
               path="/signin"
@@ -69,21 +73,27 @@ class App extends React.Component {
 
             <Route path= "/about" component={About} />
             <Suspense fallback={<SpinnerComp />}>
-              <Route path={`/crafts/:categoryId`} component={CraftPreview} />
-            </Suspense>
+             
+              <Route path={`/crafts/:categoryId`}
+              
+              render={({match}) => this.props.currentUser ?
+               (<CraftPreview match={match} />) : (<Redirect to='/signin' />)
+              }/>
+                
+             </Suspense>
             <Route exact
               path="/signup"
               render={() => this.props.currentUser ?
                 (<Redirect to='/' />) :
                 (<Signup />)} />
+
             <Route exact path="/contact-us" component={ContactUs} />
 
-            </Switch>
           </HashRouter>
           <Footer />
         </Suspense>
 
-      <RequestsList />
+      <RequestsList /> 
       </div>
     );
   }

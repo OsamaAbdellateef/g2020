@@ -55,12 +55,12 @@ class CraftPreview extends React.Component {
 
             <div className="craft-preview container">
               
-                <h3 className="" style={{ margin: "75px 0px 22px"}} >{this.props.match.params.categoryId == "كهربائي" ? 'قسم الكهرباء' : null}</h3>
+               
                 <div className="row" >
                 {this.props.myCrafts.map(worker => (
                     <Suspense fallback={<Skeleton height={100} width={100} />}>
                          <CraftCard  
-                         key={Math.random()}
+                        key={Math.random()}
                         imageCraftURL={worker.imageCraftURL} displayName={worker.displayName} address={worker.address} 
                         phoneNumber={worker.phoneNumber} 
                         crafterID={worker.userID}

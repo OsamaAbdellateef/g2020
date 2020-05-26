@@ -98,7 +98,7 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
                     {currentUser ? (
                         ownReq.map(req => (
                             req.userID == currentUser.userID ? (
-                                <React.Fragment>
+                                <React.Fragment key={Math.random()}>
                                     <ListItem button>
                                         <ListItemText primary={`${req.crafterName}`} secondary={`${req.craft}`} />
                                         
