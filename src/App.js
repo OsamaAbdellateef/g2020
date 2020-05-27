@@ -13,7 +13,7 @@ import IctonButotn from './components/icon-button/icon-button.component';
 import Signup from './components/signup/signup.component';
 import ContactUs from './components/contact-us/contact-us.component';
 //import CraftPreview from './components/craft-preview/craft-preview.component';
-import { setCurrentUser } from './redux/user/user.actions';
+import { setCurrentUser , set_state } from './redux/user/user.actions';
 import { connect } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 import SpinnerComp from './components/spinner/spinner.component';
@@ -28,31 +28,40 @@ class App extends React.Component {
 
   componentDidMount() {
     
-    const { setCurrentUser } = this.props;
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    const { setCurrentUser ,set_state } = this.props;
+    this.unsubscribeFromAuth =  auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
+        
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(snapshot => {
           setCurrentUser({
             id: snapshot.id,
-            ...snapshot.data()
+            ...snapshot.data(),
+
           })
         })
+        console.log("you have logged ")
+      } else {
+        set_state("go" , true)
       }
 
       
 
-      setCurrentUser(userAuth
+      await setCurrentUser(userAuth
       );
-      createUserProfileDocument(userAuth);
-    });
-     
-  }
+      await createUserProfileDocument(userAuth);
+    })
+  
+    
+     setTimeout(() => {console.log("passed 3 seconds ");
+      this.props.set_state("isMounted" , true)
+    },3000)
+  } 
 
   render() {
     return (
       <div className="App">
-        <Suspense fallback={<SpinnerComp />}
+        { (this.props.currentUser ||  this.props.go)  ? (<Suspense fallback={<SpinnerComp />}
         >
           
           <HashRouter >
@@ -67,7 +76,7 @@ class App extends React.Component {
             <Route
               exact
               path="/signin"
-              render={() => this.props.currentUser ?
+              render={() => this.props.currentUser  ?
                 (<Redirect to='/' />)
                 : (<SignIn />)} />
 
@@ -91,8 +100,8 @@ class App extends React.Component {
 
           </HashRouter>
           <Footer />
-        </Suspense>
-
+        </Suspense>):(<SpinnerComp />)}
+        
       <RequestsList /> 
       </div>
     );
@@ -102,15 +111,17 @@ class App extends React.Component {
 const mapStateToProps = ({ user }) => {
   return {
     currentUser: user.currentUser,
-    myCrafts: user.myCrafts
-
+    myCrafts: user.myCrafts,
+    isMounted: user.isMounted,
+    go: user.go
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setCurrentUser: (user) => dispatch(setCurrentUser(user),
-    )
+    setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+    set_state: (stateName, value) => dispatch(set_state(stateName, value))
+
   }
 }
 

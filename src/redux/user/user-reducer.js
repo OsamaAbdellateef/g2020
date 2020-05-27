@@ -40,7 +40,9 @@ const INITIAL_STATE = {
     comment:'',
     ownReq:[],
     currentURL:'',
-    nUsers:[]
+    nUsers:[],
+    wait:true,
+    go:false
 
 }
 const userReducer = (state = INITIAL_STATE, action) => {

@@ -58,7 +58,7 @@ class CraftPreview extends React.Component {
                
                 <div className="row" >
                 {this.props.myCrafts.map(worker => (
-                    <Suspense fallback={<Skeleton height={100} width={100} />}>
+                    <Suspense key={Math.random()} fallback={<Skeleton height={100} width={100} />}>
                          <CraftCard  
                         key={Math.random()}
                         imageCraftURL={worker.imageCraftURL} displayName={worker.displayName} address={worker.address} 
