@@ -23,7 +23,7 @@ class  CommentPreview  extends React.Component {
     componentDidMount() {
         const {comments,postID,set_state} = this.props
         var arr = [];
-        firestore.collection('comments').onSnapshot(function(querySnapshot) {
+        firestore.collection('comments').orderBy("createdAt",'desc').onSnapshot(function(querySnapshot) {
             arr = []; 
             querySnapshot.forEach(doc => {
                 //console.log("comment : " , doc.data());
@@ -36,15 +36,15 @@ class  CommentPreview  extends React.Component {
                  set_state("loading" , false);
              }
 
-             for (let i = 1; i < arr.length; i++) {
-                let j = i - 1
-                let temp = arr[i]
-                while (j >= 0 && arr[j].createdAt.seconds > temp.createdAt.seconds) {
-                  arr[j + 1] = arr[j]
-                  j--
-                }
-                arr[j+1] = temp
-              }
+            //  for (let i = 1; i < arr.length; i++) {
+            //     let j = i - 1
+            //     let temp = arr[i]
+            //     while (j >= 0 && arr[j].createdAt.seconds > temp.createdAt.seconds) {
+            //       arr[j + 1] = arr[j]
+            //       j--
+            //     }
+            //     arr[j+1] = temp
+            //   }
 
             set_state('comments' , arr);
             console.log("commmmmmmmmmmmmmmments")

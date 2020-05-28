@@ -44,20 +44,19 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
 
     const [counter, setCounter] = React.useState(0);
 
-    React.useEffect(() => {
-        var  arr = [];
-        firestore.collection('requests').orderBy("createdAt" , "desc").onSnapshot(function (querySnapshot) {
-            arr=[]
-            querySnapshot.forEach(doc => arr.push(doc.data()));
-            console.log("array from inside of snapshot : " , arr)
-            set_state("ownReq" , arr)
-        });
-        
-        console.log('yanaaaaaaaaaaaaaaas');
-        
-        
+  
 
-    },[])
+    React.useEffect(() => {
+        var jao = [];
+        if(currentUser) {
+            firestore.collection('requests').orderBy("createdAt" , "desc").where("userID" , "==" , `${currentUser.userID}`).onSnapshot(querySnapshot => {
+                jao = [];
+                querySnapshot.forEach(doc => jao.push(doc.data()));
+                console.log("your own Requests y beeh : "  ,currentUser.userID, jao);
+                set_state("ownReq" , jao)
+            })
+        }
+    },[currentUser])
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -81,6 +80,7 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
                 background: "white", zIndex: "1"
             }} variant="outlined" color="primary" onClick={handleClickOpen}>
                 الطلبات الخاصة بك
+                <span className="req-num">{ownReq.length}</span>
       </Button>):(null)):(null)}
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
                 <AppBar className={classes.appBar}>

@@ -1,5 +1,19 @@
 @import '../../scss-customs/utilities.scss';
 
+.MuiButton-outlinedPrimary {
+    outline: none !important;
+}
+
+.req-num {
+    background: #3587d7;
+    position: absolute;
+    left: -10px;
+    width: 17%;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+}
+
 .right-67 {
     right: 80%;
     font-weight: bold;
