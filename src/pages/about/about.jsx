@@ -6,9 +6,9 @@ import AppImg from '../../images/header-image.jpg';
 import UnderlineHeader from '../../components/underline-header/underline-header.component';
 
 
-const About =  () => (
+const About = () => (
 
-    <section className="about container " style={{marginTop:"100px"}}>
+    <section className="about container " style={{ marginTop: "100px" }}>
         <div className="about-app">
             <div className="row">
                 <div className=" col col-12 col-md-6">
@@ -18,10 +18,11 @@ const About =  () => (
                     <p> يهدف  صنعتنا الى مساعدة ابناء الصعيد في الاماكن  النائية الراغبين في فرص  عمل في الأماكن والمضطرين الي السفر في وجه بحري او حتى خارج الدولة مما يساهم في زيادة فرص العمل على مستوى الصعيد وتخفيف الضغط على الوجه البحري وقد تم اصدار تطبيق خاص بصنعتنا  </p>
                 </div>
                 <div className="col col-12 col-md-6">
-                    <img  src={AppImg} />                   
+                    <img src={AppImg} />
                 </div>
             </div>
         </div>
+       
         <OurTeamPreview />
     </section>
 

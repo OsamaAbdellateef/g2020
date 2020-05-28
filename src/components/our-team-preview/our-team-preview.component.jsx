@@ -1,6 +1,6 @@
 import React from 'react';
 import MemberCard from '../member-card/member-card.component';
-
+import UnderlineHeader from '../underline-header/underline-header.component';
 class OurTeamPreview extends React.Component {
     constructor(props) {
         super(props);
@@ -57,10 +57,18 @@ class OurTeamPreview extends React.Component {
         return(
             <div className="our-team-preview">
                <div className="container">
+               <UnderlineHeader>
+            فريق العمل الخاص بنا 
+        </UnderlineHeader>
                <div className="row">
               {
                   this.state.members.map(member => (
-                      <MemberCard key={member.name} name={member.name}  job={member.job} imgSrc={member.imgSrc} link={member.link}  desc={member.desc} />
+                      <MemberCard key={Math.random()} 
+                      name={member.name} 
+                      job={member.job} 
+                      imgSrc={member.imgSrc} 
+                      link={member.link}  
+                      desc={member.desc} />
                   ))
               }
             </div>

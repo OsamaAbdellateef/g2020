@@ -66,6 +66,13 @@
     transform: translateY(-50%);
 }
 
+.centerH {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 @media (max-width:"919px") {
     .but {
         margin-right: 0px !important;
