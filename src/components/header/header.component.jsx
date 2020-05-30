@@ -1,7 +1,8 @@
 import React from 'react';
 import './header.style.scss';
 import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { withRouter , Switch ,BrowserRouter,HashRouter, Link } from 'react-router-dom';
+import RequestsIcon from '../requests-icon/requests-icon.component';
+import { withRouter  , Link } from 'react-router-dom';
 import { auth } from './../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,12 +12,14 @@ import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 const Header = ({ currentUser, id ,match}) => (
 
     <React.Fragment>
-
+          {currentUser ? (currentUser.signedAs == "worker" ? <RequestsIcon /> : null):null}
         <Navbar className="navbar" expand="lg" collapseOnSelect={true}>
             <Container>
 
-
-                <Navbar.Brand as={Link} to="/" className="logo-txt mr-2" href="/">صنعتنا</Navbar.Brand>
+                
+                <Navbar.Brand as={Link} to="/" className="logo-txt mr-2" href="/">صنعتنا
+                 
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     
@@ -45,6 +48,7 @@ const Header = ({ currentUser, id ,match}) => (
                             </Nav.Link>
                             
                         }
+                      
                     
                     </Nav>
                      

@@ -42,7 +42,8 @@ const INITIAL_STATE = {
     currentURL:'',
     nUsers:[],
     wait:true,
-    go:false
+    go:false,
+    workerReqs:[]
 
 }
 const userReducer = (state = INITIAL_STATE, action) => {

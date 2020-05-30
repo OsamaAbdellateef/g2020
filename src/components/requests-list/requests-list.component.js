@@ -72,7 +72,7 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
 
     return (
         <div>
-            {currentUser  ? (currentUser.signedAs == "worker" ? (<Button style={{
+            {currentUser  ? <Button style={{
                 position: "fixed",
                 bottom: "30px",
                 right: "2px",
@@ -81,7 +81,7 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
             }} variant="outlined" color="primary" onClick={handleClickOpen}>
                 الطلبات الخاصة بك
                 <span className="req-num">{ownReq.length}</span>
-      </Button>):(null)):(null)}
+      </Button>:(null)}
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
                 <AppBar className={classes.appBar}>
                     <Toolbar>

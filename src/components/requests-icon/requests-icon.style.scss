@@ -1,0 +1,41 @@
+@import '../../scss-customs/utilities.scss';
+@import '../../scss-customs/mixins.scss';
+
+.MuiButtonBase-root.append {
+    left: 80% !important;
+    top: 4.5% !important;
+    transform: translateY(-50%) !important;
+    z-index: 11;
+    position: fixed !important;
+}
+.MuiButtonBase-root.append + div {
+    z-index: 11;
+
+}
+
+.req-icon {
+    position: absolute;
+    left: 13%;
+    width: 29%;
+    background: #ff7575;
+    border-radius: 50%;
+    text-align: center;
+    font-size: smaller;
+    color: white;
+}
+
+.x-sm-font {
+    font-size: 13px;
+}
+
+.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button {
+    flex-wrap: wrap;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+@media (max-width:"991px") {
+    .MuiButtonBase-root.append {
+        left: 58% !important;
+    }
+} 

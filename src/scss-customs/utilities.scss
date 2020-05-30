@@ -72,6 +72,9 @@
     transform: translateX(-50%);
 }
 
+.no-outline {
+    outline: none !important;
+}
 
 @media (max-width:"919px") {
     .but {
