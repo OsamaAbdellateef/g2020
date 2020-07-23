@@ -26,8 +26,12 @@ const handle = (email , message) => {
       })
 }
 
-const ContactUs = ({ message, email, name, handle_change }) => (
-    <div className="contact-us container text-center ">
+const ContactUs = ({ message, email, name, handle_change }) => {
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+    return(
+        <div className="contact-us container text-center ">
         <div className="row">
             <div className="col-12 contact-header">
                 <UnderlineHeader>
@@ -58,7 +62,8 @@ const ContactUs = ({ message, email, name, handle_change }) => (
         </div>
 
     </div>
-)
+    )
+}
 
 const mapStateToProps = ({ contact }) => {
     return {

@@ -18,6 +18,7 @@ class CraftPreview extends React.Component {
 
 
     async componentDidMount() {
+        window.scrollTo(0, 0);
         const {set_state} = this.props;
         // const events = await firebase.firestore().collection('events')
         // events.get().then((querySnapshot) => {

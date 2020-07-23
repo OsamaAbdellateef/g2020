@@ -3,6 +3,7 @@ import './footer.style.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faSpinner, faChevronLeft, faPhoneVolume, faEnvelope, faAddressCard, faceboo } from '@fortawesome/free-solid-svg-icons';
 import { SocialMediaIconsReact } from 'social-media-icons-react';
+import {Link} from 'react-router-dom';
 
 const Footer = () => (
     <footer>
@@ -26,36 +27,38 @@ const Footer = () => (
                                             الرئيسية
                                         </a>
                                     </li>
+                                   
                                     <li>
-                                        <a href="#">
-                                            <FontAwesomeIcon icon={faChevronLeft} />
-                                            الحرفيين
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <Link to="/posts">
                                             <FontAwesomeIcon icon={faChevronLeft} />
                                             المنشورات
-                                        </a>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/about">
+                                            <FontAwesomeIcon icon={faChevronLeft} />
+                                            خدمات
+                                        </Link>
                                     </li>
                                 </ul>
 
                             </div>
                             <div className="col-sm-4">
                                 <ul className="list-unstyled">
+                                    
                                     <li>
-                                        <a href="#">
-                                            <FontAwesomeIcon icon={faChevronLeft} />
-                                            خدمات
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <Link to="/about">
                                             <FontAwesomeIcon icon={faChevronLeft} />
                                             عن التطبيق
-                                        </a>
+                                        </Link>
                                     </li>
-
+                                    
+                                    <li>
+                                        <Link to="/contact-us">
+                                            <FontAwesomeIcon icon={faChevronLeft} />
+                                            تواصل معنا
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

@@ -43,7 +43,9 @@ const INITIAL_STATE = {
     nUsers:[],
     wait:true,
     go:false,
-    workerReqs:[]
+    workerReqs:[],
+    accReq:[],
+    pendingReq:[]
 
 }
 const userReducer = (state = INITIAL_STATE, action) => {

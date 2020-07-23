@@ -19,7 +19,12 @@ import { Spinner } from 'react-bootstrap';
 import SpinnerComp from './components/spinner/spinner.component';
 import Posts from './pages/posts/posts.component';
 import RequestsList from './components/requests-list/requests-list.component';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
+
+
+const firestore = firebase.firestore();
 const Home = lazy(() => import('./pages/homePage/Home'));
 const CraftPreview = lazy(() => import('./components/craft-preview/craft-preview.component'));
 
@@ -28,6 +33,8 @@ class App extends React.Component {
 
   componentDidMount() {
     
+      window.scrollTo(0, 0);
+  
     const { setCurrentUser ,set_state } = this.props;
     this.unsubscribeFromAuth =  auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -51,12 +58,9 @@ class App extends React.Component {
       );
       await createUserProfileDocument(userAuth);
     })
-  
-    
-     setTimeout(() => {console.log("passed 3 seconds ");
-      this.props.set_state("isMounted" , true)
-    },3000)
+
   } 
+
 
   render() {
     return (
@@ -97,12 +101,14 @@ class App extends React.Component {
                 (<Signup />)} />
 
             <Route exact path="/contact-us" component={ContactUs} />
-
+            <Footer />
           </HashRouter>
-          <Footer />
+          
+          
         </Suspense>):(<SpinnerComp />)}
         
       <RequestsList /> 
+
       </div>
     );
   }

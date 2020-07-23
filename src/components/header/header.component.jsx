@@ -8,8 +8,7 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
-
-const Header = ({ currentUser, id ,match}) => (
+const Header = ({ accReq, currentUser, id ,match}) => (
 
     <React.Fragment>
           {currentUser ? (currentUser.signedAs == "worker" ? <RequestsIcon /> : null):null}
@@ -26,7 +25,7 @@ const Header = ({ currentUser, id ,match}) => (
                         
                         <Nav className="mr-auto">
                         <Nav.Link className="mr-2" as={Link} to="/" href="/">الرئيسية</Nav.Link>
-
+{currentUser ? (currentUser.signedAs == "worker" ? (<Nav.Link as={Link} className="mr-2" to="/services" href="/services">الطلبات المقبولة ({accReq.length})</Nav.Link>):(null)):(null)}
                         <NavDropdown className="mr-2" title="الحرفيين" id="basic-nav-dropdown">
                         <NavDropdown.Item as={Link} to="/crafts/كهربائي" href="/crafts/كهربائي"> كهربائيين</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/crafts/سباك"  href="/crafts/سباك"> سباكين</NavDropdown.Item>
@@ -35,7 +34,7 @@ const Header = ({ currentUser, id ,match}) => (
                         <Nav.Link as={Link} className="mr-2" to="/posts"  href="/posts">المنشورات</Nav.Link>
                         <Nav.Link as={Link} className="mr-2" to="/contact-us" href="/contact-us">تواصل معنا</Nav.Link>
                         <Nav.Link as={Link} className="mr-2" to="/services" href="/services">الخدمات</Nav.Link>
-                        <Nav.Link as={Link} className="mr-2" to="/about" href="/about">عن التطبيق</Nav.Link>
+                        
                         
                         {currentUser ?
                             <Nav.Link className="mr-2" onClick={() => auth.signOut()} >
@@ -49,7 +48,7 @@ const Header = ({ currentUser, id ,match}) => (
                             
                         }
                       
-                    
+                 
                     </Nav>
                      
                     
@@ -65,7 +64,8 @@ const Header = ({ currentUser, id ,match}) => (
 
 const mapStateToProps = state => {
     return {
-        currentUser: state.user.currentUser
+        currentUser: state.user.currentUser,
+        accReq: state.user.accReq
     }
 }
 

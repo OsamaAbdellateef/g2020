@@ -21,6 +21,10 @@ class SignIn extends React.Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+    
     handleSubmit = async event => {
         const { set_state, email, password } = this.props
         event.preventDefault();
