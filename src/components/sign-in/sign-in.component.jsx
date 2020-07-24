@@ -50,15 +50,8 @@ class SignIn extends React.Component {
                     <div className="row">
                         <div className="sign-in col p-5 col-12 col-lg-6">
                             <h2 className="text-capitalize  mb-5 "> تسجيل الدخول</h2>
-                            <IconButton
-                                additionalclass="mr-0  "
-                                onClick={signInWithGoogle}
-                                iconName="google">
-                                تسجيل الدخول باستخدام جوجل
-                            </IconButton>
-                            <Error>Hello there </Error>
+                            
                             {validationProblem == "true" ? (<Error>كلمة السر أو البريد الاتكتروني غير صحيح</Error>):(null)}
-                            <hr className="hr-text text-center " data-content="أو"></hr>
                             <span  >سجل باستخدام البريد الالكتروني وكلمة السر الخاصة بك </span>
                             <form>
                             

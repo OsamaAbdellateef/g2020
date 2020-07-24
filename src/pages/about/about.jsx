@@ -6,9 +6,14 @@ import AppImg from '../../images/header-image.jpg';
 import UnderlineHeader from '../../components/underline-header/underline-header.component';
 
 
-const About = () => (
+const About = () => {
 
-    <section className="about container " style={{ marginTop: "100px" }}>
+    React.useEffect(() => {
+        window.scrollTo(0,0)
+    })
+
+    return(
+        <section className="about container " style={{ marginTop: "100px" }}>
         <div className="about-app">
             <div className="row">
                 <div className=" col col-12 col-md-6">
@@ -25,8 +30,12 @@ const About = () => (
        
         <OurTeamPreview />
     </section>
+    )
+}
 
-)
+    
+
+
 
 
 export default About;

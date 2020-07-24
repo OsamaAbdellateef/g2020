@@ -97,7 +97,7 @@ const acceptRequest = async(reqID) => {
             let pendingReq = [];
 
             pendingReq = arr.filter((req) => req.accepted == "false");
-            accReqs = arr.filter((req) => req.accepted == "true");
+            accReqs = arr.filter((req) => req.accepted == "true" && req.done == "false" );
             console.log("--------====== accepted Requests " , accReqs) 
             set_state("pendingReq" , pendingReq)
             set_state("accReq" , accReqs)

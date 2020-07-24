@@ -1,0 +1,17 @@
+.acc-req {
+    min-height: 300px;
+    margin-top: 101px
+}
+
+@media (max-width:"600px") {
+    .acc-req {
+        font-size: 10px !important;
+        .container {
+            padding: 0px !important;
+        }
+    }
+
+    button {
+        font-size: 10px !important;
+    }
+}

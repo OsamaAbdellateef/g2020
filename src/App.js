@@ -19,8 +19,10 @@ import { Spinner } from 'react-bootstrap';
 import SpinnerComp from './components/spinner/spinner.component';
 import Posts from './pages/posts/posts.component';
 import RequestsList from './components/requests-list/requests-list.component';
+import AccRequests from './components/accepted-requests/acceptedRequests.component';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import AccRequestsComp from './components/accepted-requests/acceptedRequests.component';
 
 
 
@@ -33,7 +35,7 @@ class App extends React.Component {
 
   componentDidMount() {
     
-      window.scrollTo(0, 0);
+      window.scrollTo(0,0);
   
     const { setCurrentUser ,set_state } = this.props;
     this.unsubscribeFromAuth =  auth.onAuthStateChanged(async userAuth => {
@@ -84,7 +86,8 @@ class App extends React.Component {
                 (<Redirect to='/' />)
                 : (<SignIn />)} />
 
-            <Route path= "/about" component={About} />
+            <Route path = "/about" component={About} />
+            <Route path = "/accepted-requests" component={AccRequestsComp} />
             <Suspense fallback={<SpinnerComp />}>
              
               <Route path={`/crafts/:categoryId`}

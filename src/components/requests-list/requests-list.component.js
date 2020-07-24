@@ -103,9 +103,9 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
                                         <ListItemText primary={`${req.crafterName}`} secondary={`${req.craft}`} />
                                         
                                         {req.accepted == "true" ? (<span className="centerV right-67 recieved">تم تاكيد الطلب</span>):(<span className="centerV right-67 waiting" > قيد الانتظار...</span>)}
-                                        <IconButton onClick={() => {deleteReq(req.requestID)}}>
-  <DeleteIcon />
-</IconButton>
+                                        {req.accepted == "false" ? (<IconButton onClick={() => {deleteReq(req.requestID)}}>
+                                 <DeleteIcon />
+                                </IconButton>):(null)}
                                     </ListItem>
                                     
                                     <Divider />

@@ -84,7 +84,8 @@ useEffect(() => {
       requestID:`${nid}`,
       crafterName: `${displayName}`,
       craft: `${craft}`,
-      accepted:`${false}`
+      accepted:`${false}`,
+      done:'false'
 
     })
       .then(function () {

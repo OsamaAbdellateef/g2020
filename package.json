@@ -20,6 +20,7 @@
     "bootstrap": "^4.4.1",
     "date-fns": "^2.10.0",
     "firebase": "^7.9.3",
+    "formik": "^2.1.5",
     "gh-pages": "^2.2.0",
     "material-ui-popup-state": "^1.5.4",
     "moment": "^2.24.0",

@@ -2,6 +2,11 @@
 
 .underline-header-container {
     position: relative;
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+
     &::after {
         content: "";
         position: absolute;

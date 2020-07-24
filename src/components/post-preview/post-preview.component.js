@@ -7,6 +7,9 @@ import moment from 'moment';
 
 
 class PostPreview extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0,0)
+    }
     render() {
         const posts = this.props.posts;
         return (
