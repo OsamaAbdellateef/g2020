@@ -141,9 +141,11 @@ useEffect(() => {
   return (
 
     <div>
-      {requested ? (<DropdownButton variant="success" id="dropdown-basic-button" title="تم الطلب بنجاح ">
+      {requested ? (<div className="special-case">
+      <DropdownButton variant="success" id="dropdown-basic-button" title="تم الطلب بنجاح ">
       <Dropdown.Item onClick={() => {deleteRequest(crafterID)}}>الغاء الطلب </Dropdown.Item>
-  </DropdownButton>) : (<Button   onClick={handleClickOpen}>
+  </DropdownButton>
+      </div> ) : (<Button   onClick={handleClickOpen}>
          اطلب الآن 
       </Button>)}
       

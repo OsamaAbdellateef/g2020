@@ -6,6 +6,8 @@ import BtnLink from './../button/btn.component';
 import path from './../../images/member images/member5.jpg'
 import CarouselLogo from '../../images/worker.png';
 import ServicePreview from '../service-preview/service-preview.component';
+import firebase from 'firebase/app';
+
 
 
 var p = require('./../../images/member images/member5.jpg');

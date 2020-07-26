@@ -101,7 +101,9 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
                             req.userID == currentUser.userID ? (
                                 <React.Fragment key={Math.random()}>
                                     <ListItem button>
+                                        <div>
                                         <ListItemText primary={`${req.crafterName}`} secondary={`${req.craft}`} />
+                                        </div>
                                         
                                         {req.accepted == "true" ? (req.done == "true" ? (<RatingComp requestID = {ownReq.requestID} ownReq={req} />):(<span className="centerV right-67 recieved">تم تاكيد الطلب</span>)):(<span className="centerV right-67 waiting" > قيد الانتظار...</span>)}
                                         {req.accepted == "false" ? (<IconButton onClick={() => {deleteReq(req.requestID)}}>
