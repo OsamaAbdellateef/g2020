@@ -179,7 +179,7 @@ class Signup extends React.Component {
 
 
     render() {
-        document.title="dw";
+  
         const { handle_change, address, email, password, confirmPassword, phoneNumber, craft, day, month, year, image, imageIdent, imageIdentURL, imageCraftURL, number, imageCraft, setAddress, displayName, imagePersonalURL, imagePersonal, validationProblem, set_state, signedAs } = this.props;
         return (
             <div className="sign-up mb-5">
