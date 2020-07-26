@@ -35,4 +35,11 @@
     .right-67 {
         right: 53% !important;
     }
+    .MuiListItem-gutters {
+     
+        flex-direction: column;
+    } 
+    .MuiListItemText-multiline {
+        width: 100%;
+    }
 }

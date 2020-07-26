@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import  RatingComp from '../rating-comp/rating.component';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -102,7 +103,7 @@ const RequestsList = ({ currentUser , craft, ownReq , set_state }) => {
                                     <ListItem button>
                                         <ListItemText primary={`${req.crafterName}`} secondary={`${req.craft}`} />
                                         
-                                        {req.accepted == "true" ? (<span className="centerV right-67 recieved">تم تاكيد الطلب</span>):(<span className="centerV right-67 waiting" > قيد الانتظار...</span>)}
+                                        {req.accepted == "true" ? (req.done == "true" ? (<RatingComp requestID = {ownReq.requestID} ownReq={req} />):(<span className="centerV right-67 recieved">تم تاكيد الطلب</span>)):(<span className="centerV right-67 waiting" > قيد الانتظار...</span>)}
                                         {req.accepted == "false" ? (<IconButton onClick={() => {deleteReq(req.requestID)}}>
                                  <DeleteIcon />
                                 </IconButton>):(null)}

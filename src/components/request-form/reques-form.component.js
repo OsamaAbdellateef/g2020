@@ -29,7 +29,22 @@ const RequestForm = ({ currentUser,craft, crafterID ,displayName}) => {
   }
   
   useEffect( () => {
-    getReq();
+   // getReq();
+    var arr;
+       const unsubscribe = firestore.collection("requests").onSnapshot(querySnapshot => {
+        arr=[];
+        querySnapshot.forEach(doc => {
+            console.log("new post : " , doc.data());
+              
+            arr.push(doc.data());           
+        }) 
+        setRequests(arr)
+       })
+  
+
+        return function cleanUp() {
+         unsubscribe();
+        }
     
   },[]);
 

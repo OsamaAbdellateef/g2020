@@ -6,14 +6,17 @@ import RequesForm from '../request-form/reques-form.component';
 import firebase from 'firebase/app';
 import { connect } from 'react-redux';
 import 'firebase/firestore';
+import SimpleRating from '../static-rate/static-rate.component'
+
 
 
 const firestore = firebase.firestore();
 
-const CraftCard = ({ currentUser, imageCraftURL, crafterID, imagePersonalURL, craft, displayName, address, userID, phoneNumber, ...otherProps }) => {
+const CraftCard = ({ currentUser, imageCraftURL, crafterID, imagePersonalURL, craft, displayName, address, userID, phoneNumber }) => {
 
     return (
-        <div className="col-12 col-md-6 col-lg-3 mb-5 col craft-card"  {...otherProps} >
+        currentUser ? (
+            currentUser.userID !== crafterID ? (<div className="col-12 col-md-6 col-lg-3 mb-5 col craft-card"   >
             <div className="content">
                 <div className="image-container">
                     <img src={`${imagePersonalURL}`} />
@@ -24,11 +27,12 @@ const CraftCard = ({ currentUser, imageCraftURL, crafterID, imagePersonalURL, cr
                     <h5><FontAwesomeIcon icon={faTools} size="sm" transform="left-4" color="#3587D7" />{craft}</h5>
                     <h5><FontAwesomeIcon icon={faAddressCard} size="sm" transform="left-4" color="#3587D7" />{address}</h5>
 
-
+                    <SimpleRating crafterID={crafterID} />
                     <RequesForm crafterID={crafterID} craft={craft} displayName={displayName} />
                 </div>
             </div>
-        </div>
+        </div>):(null)
+        ):(null)
     )
 }
 

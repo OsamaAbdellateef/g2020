@@ -1,0 +1,17 @@
+.MuiRating-root {
+    direction: ltr !important;
+}
+.rate-control {
+    width: 100% !important;
+    direction: ltr;
+
+    button {
+    position: absolute;
+    left: 30%;
+    }
+}
+@media (max-width:"500px") {
+    .rate-control {
+        width: 100% !important;
+    }
+}

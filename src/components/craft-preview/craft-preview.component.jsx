@@ -12,13 +12,14 @@ const CraftCard = lazy(() => import( '../craft-card/craft-card.component'));
  
 const firestore = firebase.firestore();
 
-
+var mounted = true;
 class CraftPreview extends React.Component {
 
 
 
     async componentDidMount() {
-        window.scrollTo(0, 0);
+        if(mounted) {
+            window.scrollTo(0, 0);
         const {set_state} = this.props;
         // const events = await firebase.firestore().collection('events')
         // events.get().then((querySnapshot) => {
@@ -38,8 +39,13 @@ class CraftPreview extends React.Component {
 
         
         set_state("myCrafts" , mC);
+        }
 
         
+    }
+
+    componentWillUnmount () {
+        mounted=false
     }
 
     componentDidUpdate () {

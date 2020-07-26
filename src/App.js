@@ -23,6 +23,7 @@ import AccRequests from './components/accepted-requests/acceptedRequests.compone
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import AccRequestsComp from './components/accepted-requests/acceptedRequests.component';
+import ServicePreview from './components/service-preview/service-preview.component';
 
 
 
@@ -104,6 +105,7 @@ class App extends React.Component {
                 (<Signup />)} />
 
             <Route exact path="/contact-us" component={ContactUs} />
+            
             <Footer />
           </HashRouter>
           

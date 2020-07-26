@@ -48,7 +48,7 @@ const ContactUs = () => {
                     <div className="row">
                         <IconBox iconName={faEnvelope} header="البريد الالكتروني" description="SANETNA.ESTABIENA@GMAIL.COM" />
                         <IconBox iconName={faPhone} header="رقم الهاتف" description="01116113544" />
-                        <IconBox iconName={faAddressCard} header=" العنوان" description="our location is in London" />
+                        <IconBox iconName={faAddressCard} header=" العنوان" description="مقرنا في المنيا" />
                     </div>
                 </div>
                 <div className="w-100">

@@ -1,16 +1,18 @@
 .craft-card.col {
     border-radius: 10px;
+    height: 455px;
     button {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         width: 70%;
+        bottom: 2%;
     }
 
     svg {
         margin-left: 10px;
     }
-    height: 400px;
+    
     h5 {
         font-size: 1.0rem;
         margin-bottom:10px;

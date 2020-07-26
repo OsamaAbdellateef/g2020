@@ -41,7 +41,7 @@ const AccRequestsComp = ({set_state,accReq}) => {
                         <tbody>
                             {accReq.map((req,i) => (
                                 req.done == "false" ? (
-                                <tr>
+                                <tr key={Math.random()}>
                                 <td>{i+init}</td>
                                 <td>{req.clientName}</td>
                                 <td>{req.address}</td>

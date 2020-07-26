@@ -1,0 +1,48 @@
+.service-preview {
+    margin:50px 0
+}
+
+
+.flex-service {
+   
+}
+
+.service-card {
+    
+    
+
+
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        padding: 18px;
+        box-shadow: 0 0 5px 4px #d8d8d8;
+        border-radius: 6px;
+        img {
+            width: 60%;
+        }
+    }
+
+    .service-desc {
+        position: relative;
+
+        h4 {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+}
+
+
+.service-icon {
+    width: 46%;
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 70%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

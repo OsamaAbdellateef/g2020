@@ -12,7 +12,7 @@ class OurTeamPreview extends React.Component {
                 job:"CO-Founder" ,
                 imgSrc:"member1.jpg",
                 link:['fb,inst,linkidin'],
-                desc:'Designing and developing advanced applications for the Android platform.'
+                desc:'establish and direct the activities of a business startup'
             },
             {
                 name:"Osama Abdellateif",
@@ -26,7 +26,7 @@ class OurTeamPreview extends React.Component {
                 job:"Android-Dev" ,
                 imgSrc:"member3.PNG",
                 link:['fb,inst,linkidin'],
-                desc:'establish and direct the activities of a business startup                '
+                desc:' Designing and developing advanced applications for the Android platform. '
             },
             {
                 name:"Ahmed Selemani",
@@ -44,10 +44,10 @@ class OurTeamPreview extends React.Component {
             },
             {
                 name:"Ahmed Abdulrazek",
-                job:"CO-Founder" ,
+                job:"Android-Dev" ,
                 imgSrc:"member6.PNG",
                 link:['fb,inst,linkidin'],
-                desc:"design and build applications for mobile devices running Apple's iOS operating software "
+                desc:"Designing and developing advanced applications for the Android platform. "
             }
         ]
         }
