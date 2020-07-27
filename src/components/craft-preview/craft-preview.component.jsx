@@ -18,7 +18,8 @@ class CraftPreview extends React.Component {
 
 
     async componentDidMount() {
-        if(mounted) {
+        console.log("###############################################################################################")
+        
             window.scrollTo(0, 0);
         const {set_state} = this.props;
         // const events = await firebase.firestore().collection('events')
@@ -39,13 +40,16 @@ class CraftPreview extends React.Component {
 
         
         set_state("myCrafts" , mC);
-        }
+        
 
         
     }
 
     componentWillUnmount () {
-        mounted=false
+        mounted=false;
+        this.props.set_state("currentURL","");
+        console.log("the comp has been unmounted ");
+
     }
 
     componentDidUpdate () {
